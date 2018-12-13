@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TGIF</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <link rel="icon" type="image/png" href="ressources/logo.png">
+</head>
+
+<body>
+  <div class="jumbotron">
+    <h1>Transparent Government in Fact</h1>
+
+  </div>
+  <div id="nav"></div>
+  <div class="container text-center">
+    <div id="app" class="row">
+        <div class="col-sm-2 ">
+        <pulse-loader v-if="showLoader"></pulse-loader>
+        </div>
+      <div class="col-sm-4 ">
+
+
+        <div class="form-check form-check-inline" id="checkboxPty">
+          <input type="checkbox" id="rep" value="R" v-model="checkedNames">
+          <label for="rep">Republicans</label>
+          <input type="checkbox" id="dem" value="D" v-model="checkedNames">
+          <label for="dem">Democrats</label>
+          <input type="checkbox" id="ind" value="I" v-model="checkedNames">
+          <label for="ind">Independants</label>
+        </div>
+      </div>
+
+      <div class="col-sm-4 ">
+        <div class="form-group">
+          <label for="sel1">Select State:</label>
+          <select v-model="selected">
+            <option selected="selected">All</option>
+            <template v-for="state in states">
+              <option>{{state}}</option>
+            </template>
+          </select>
+
+          </select>
+        </div>
+      </div>
+
+      
+        
+      <table class="table table-striped table-hover" id="dataTable">
+
+        <thead>
+          <tr class="bg-primary">
+            <th>Name</th>
+            <th>Party</th>
+            <th>Seniority</th>
+            <th>Votes</th>
+            <th>State</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+
+
+
+
+          <tr v-for="senator in filteredList">
+
+            <td>{{ senator.first_name}} , {{ senator.last_name}}</td>
+            <td>{{ senator.party}}</td>
+            <td>{{ senator.seniority}}</td>
+            <td>{{ senator.votes_with_party_pct}}</td>
+            <td>{{ senator.state}}</td>
+
+    </div>
+    </tr>
+    </tbody>
+
+    </table>
+
+
+  </div>
+  </div>
+  <script>
+    var url = 'https://api.propublica.org/congress/v1/113/senate/members.json'
+
+  </script>
+  <script src="/dist/build.js"></script>
+  <script src="main.js"> </script>
+</body>
+
+</html>

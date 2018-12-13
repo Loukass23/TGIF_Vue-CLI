@@ -1,0 +1,171 @@
+body {
+  background-image: linear-gradient(to bottom right, white, rgba(47, 79, 79, 0.705));
+  font-family: Helvetica;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  border-block-start-color: darkslategrey;
+  border-left-color: darkslategrey;
+  border-bottom-color: darkslategrey;
+
+}
+
+#msg-glyph {
+  color: white;
+
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 450px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+
+  .row.content {
+    height: auto;
+  }
+}
+
+.jumbotron {
+  background: url('header.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-position-y: top;
+  min-width: 80%;
+  margin-bottom: 0px;
+  text-align: center;
+
+
+}
+
+.jumbotron img {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.jumbotron h1 {
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.342);
+  animation-name: jumboAnim;
+  animation-duration: 4s;
+}
+
+@keyframes jumboAnim {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+}
+
+.form-group {
+  display: inline-flex;
+  width: 30%;
+}
+
+.navbar {
+  background-image: linear-gradient(to bottom right, darkslategrey, rgba(137, 146, 146, 0.705));
+
+}
+
+hr {
+  background-color: rgba(47, 79, 79, 0.726);
+
+}
+
+.row.vertical-divider [class*='col-']:not(:last-child)::after {
+  background: rgba(47, 79, 79, 0.555);
+  width: 1px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 70px;
+}
+
+#comment {
+  width: 2em;
+}
+
+.table {
+  background-color: rgba(255, 255, 255, 0.671);
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.navbar-inverse a:focus,
+.navbar-inverse .navbar-nav a:hover {
+  background-color: #08080852;
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+  background-color: darkslategrey;
+}
+
+.navbar-inverse .navbar-nav>li:hover {
+  background-color: #08080852;
+
+}
+.loader {
+display: flex;
+justify-content: center;
+  border: 16px solid #f3f3f3;
+  border-radius: 20%;
+  border-top: 16px solid darkslategray;
+  border-right: 16px solid rgb(160, 160, 196);
+  border-bottom: 16px solid black;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#table {
+	margin: 0 auto;
+	width: 500px;
+}
